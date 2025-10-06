@@ -1,0 +1,17 @@
+COMMON: &common
+  DEBUG: False
+  SQLALCHEMY_TRACK_MODIFICATIONS: False
+  JSON_SORT_KEYS: False
+
+development:
+  <<: *common
+  DEBUG: True
+  SQLALCHEMY_DATABASE_URI: 'mysql+pymysql://{0}:{1}@localhost/trip_db'
+
+production:
+  <<: *common
+  SQLALCHEMY_DATABASE_URI: 'mysql+pymysql://{0}:{1}@localhost/trip_db'
+
+ADDITIONAL_CONFIG:
+  MYSQL_ROOT_USER: root
+  MYSQL_ROOT_PASSWORD: password

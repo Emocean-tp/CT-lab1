@@ -1,0 +1,1 @@
+# TripAdvisor-like module package
