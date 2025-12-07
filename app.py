@@ -19,7 +19,7 @@ ADDITIONAL_CONFIG = "ADDITIONAL_CONFIG"
 
 if __name__ == '__main__':
     flask_env = os.environ.get(FLASK_ENV, DEVELOPMENT).lower()
-    config_yaml_path = os.path.join(os.getcwd(), 'config', 'app.yml')
+    config_yaml_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config', 'app.yml')
 
     with open(config_yaml_path, "r", encoding='utf-8') as yaml_file:
         config_data_dict = yaml.load(yaml_file, Loader=yaml.FullLoader)
