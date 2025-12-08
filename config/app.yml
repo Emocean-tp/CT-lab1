@@ -6,11 +6,11 @@ COMMON: &common
 development:
   <<: *common
   DEBUG: True
-  SQLALCHEMY_DATABASE_URI: 'mysql+pymysql://{0}:{1}@localhost/trip_db'
+  SQLALCHEMY_DATABASE_URI: 'mysql+pymysql://{0}:{1}@trip-sql.mysql.database.azure.com/ctlab'
 
 production:
   <<: *common
-  SQLALCHEMY_DATABASE_URI: 'mysql+pymysql://{0}:{1}@trip-sql.mysql.database.azure.com/trip_db'
+  SQLALCHEMY_DATABASE_URI: "mysql+pymysql://appuser:azurelab_1@trip-sql.mysql.database.azure.com/ctlab"
 
 ADDITIONAL_CONFIG:
   MYSQL_ROOT_USER: root
