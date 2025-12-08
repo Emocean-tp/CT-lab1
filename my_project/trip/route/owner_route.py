@@ -7,12 +7,12 @@ from my_project.trip.domain import Owner
 owner_bp = Blueprint('owners', __name__, url_prefix='/owners')
 
 
-@owner_bp.get('')
+@owner_bp.get('/')
 def get_all_owners() -> Response:
     return make_response(jsonify(owner_controller.find_all()), HTTPStatus.OK)
 
 
-@owner_bp.post('')
+@owner_bp.post('/')
 def create_owner() -> Response:
     content = request.get_json()
     owner = Owner.create_from_dto(content)
